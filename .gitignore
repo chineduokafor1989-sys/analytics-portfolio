@@ -1,0 +1,25 @@
+# Secrets - never commit
+.env
+*.key
+*.pem
+local.settings.json
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Local data (raw datasets live in Blob Storage, not in Git)
+data/
+
+# Power BI (PBIP keeps model/report as text; ignore local cache and settings)
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+*.pbix
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
