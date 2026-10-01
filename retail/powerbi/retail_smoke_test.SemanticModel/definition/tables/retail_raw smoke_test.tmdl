@@ -1,0 +1,58 @@
+table 'retail_raw smoke_test'
+	lineageTag: 5ff6b21c-cccc-4563-8bfe-22ab0d4b140e
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d5bf86c1-7344-40c2-b5e1-ab05e8ee64b7
+		summarizeBy: sum
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product
+		dataType: string
+		lineageTag: 804dbb1e-bac4-4ab9-8ab8-a29604278248
+		summarizeBy: none
+		sourceColumn: product
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: dc2cb6f9-0eb0-44ed-800a-29003ec354fe
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_price
+		dataType: double
+		lineageTag: 4fc6cb50-c378-4a58-b95c-cd478c6357d1
+		summarizeBy: sum
+		sourceColumn: unit_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_date
+		dataType: string
+		lineageTag: d49d673f-41a8-472c-a4cf-449a0227eb63
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'retail_raw smoke_test' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("sql-analyticslab-2026.database.windows.net", "analytics-lab-db"),
+				    retail_raw_smoke_test = Source{[Schema="retail_raw",Item="smoke_test"]}[Data]
+				in
+				    retail_raw_smoke_test
+
+	annotation PBI_ResultType = Table
+

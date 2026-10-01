@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "5b5388d0c3d816457983",
+  "position": {
+    "x": 1015.3943885653784,
+    "y": 260.20116463737429,
+    "z": 0,
+    "height": 280,
+    "width": 280,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "retail_raw smoke_test"
+                    }
+                  },
+                  "Property": "product"
+                }
+              },
+              "queryRef": "retail_raw smoke_test.product",
+              "nativeQueryRef": "product"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "retail_raw smoke_test"
+                        }
+                      },
+                      "Property": "quantity"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(retail_raw smoke_test.quantity)",
+              "nativeQueryRef": "Sum of quantity"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "476f2bd777a1992c6366",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "retail_raw smoke_test"
+              }
+            },
+            "Property": "product"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fe50f5923e546405e5b0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "retail_raw smoke_test"
+                  }
+                },
+                "Property": "quantity"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

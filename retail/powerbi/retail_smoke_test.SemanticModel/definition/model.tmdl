@@ -11,5 +11,9 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
+annotation PBI_QueryOrder = ["retail_raw smoke_test"]
+
+ref table 'retail_raw smoke_test'
+
 ref cultureInfo en-GB
 
