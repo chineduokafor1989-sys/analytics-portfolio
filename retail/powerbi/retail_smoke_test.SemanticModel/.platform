@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "retail_smoke_test"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2c46262a-167d-4c07-b273-b960f0d32462"
+  }
+}
